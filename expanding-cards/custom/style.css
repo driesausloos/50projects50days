@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: #000;
+  width: 100vw;
+  padding: 0 .5rem;
+}
+.container {
+    width: 1000px;
+    color: #fff;
+}
+.flex {
+    margin: auto;
+    padding-top: 2rem;
+    display: flex;
+    gap: .5rem;
+}
+
+.card {
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: .5rem .5rem 0 0;
+    height: 30rem;
+    flex: 0.5;
+    transition: flex .3s ease-in;
+    position: relative;
+    color: #fff;
+}
+
+.card__section {
+    overflow: hidden;
+    opacity: 0;
+    background-color: #fff;
+    padding: 1rem 1rem;
+    width: 100%;
+    height: 25%;
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #000;
+    transition: opacity .6s ease;
+}
+
+.card__section p,
+.card__section h3 {
+    opacity: 0;
+    transition: opacity .6s ease .4s;
+    max-height: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 75ch;
+}
+
+.card.active {
+    flex: 4;
+}
+
+.card.active .card__section,
+.card.active .card__section p,
+.card.active .card__section h3 {
+    opacity: 100%;
+}
